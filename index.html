@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FactCheck Brasil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    min-height:100vh;
+    color:#fff;
+}
+
+header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:3rem;
+}
+
+header p{
+    margin-top:10px;
+    opacity:.8;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+    padding-bottom:50px;
+}
+
+.card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:20px;
+    padding:25px;
+    transition:.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+}
+
+.tag{
+    display:inline-block;
+    padding:6px 15px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.fake{
+    background:#ff4d4d;
+}
+
+.fact{
+    background:#22c55e;
+}
+
+h2{
+    margin-bottom:15px;
+}
+
+button{
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    background:#fff;
+    color:#2563eb;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#2563eb;
+    color:white;
+}
+
+.resposta{
+    display:none;
+    margin-top:20px;
+    background:rgba(255,255,255,.15);
+    padding:15px;
+    border-radius:12px;
+    animation:fade .5s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(10px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    opacity:.7;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>🛡 FactCheck Brasil</h1>
+<p>Descubra se uma notícia é verdadeira ou falsa.</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<div class="tag fake">FAKE NEWS</div>
+
+<h2>Vacinas alteram o DNA humano.</h2>
+
+<button onclick="mostrar(0)">Verificar</button>
+
+<div class="resposta">
+<div class="tag fact">VERDADE</div>
+<p>Não existem evidências científicas de que vacinas alterem o DNA humano.</p>
+</div>
+
+</div>
+
+<div class="card">
+<div class="tag fake">FAKE NEWS</div>
+
+<h2>A Lua possui luz própria.</h2>
+
+<button onclick="mostrar(1)">Verificar</button>
+
+<div class="resposta">
+<div class="tag fact">VERDADE</div>
+<p>A Lua apenas reflete a luz do Sol.</p>
+</div>
+
+</div>
+
+<div class="card">
+<div class="tag fake">FAKE NEWS</div>
+
+<h2>Beber água com limão cura qualquer doença.</h2>
+
+<button onclick="mostrar(2)">Verificar</button>
+
+<div class="resposta">
+<div class="tag fact">VERDADE</div>
+<p>Não há comprovação científica de que água com limão cure doenças.</p>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 • Plataforma de Checagem de Notícias
+</footer>
+
+<script>
+function mostrar(i){
+const respostas=document.querySelectorAll(".resposta");
+
+if(respostas[i].style.display==="block"){
+respostas[i].style.display="none";
+}else{
+respostas[i].style.display="block";
+}
+}
+</script>
+
+</body>
+</html>
